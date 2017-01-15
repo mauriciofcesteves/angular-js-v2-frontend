@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http } from '@angular/http';
+import { Http, Response, Headers} from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
 import { Hero }   from './hero';
 import { HEROES } from './mock-heroes';
+
+import { Observable } from 'rxjs/Rx';
 
 @Injectable()
 export class HeroService {
@@ -16,7 +18,7 @@ export class HeroService {
   getHeroes(): Promise<Hero[]> {
     return this.http.get(this.heroesUrl)
                .toPromise()
-               .then(response => response.json().data as Hero[])
+               .then(response => response.json() as Hero[])
                .catch(this.handleError);
   }
 
