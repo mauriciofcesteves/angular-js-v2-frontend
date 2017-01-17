@@ -12,7 +12,6 @@ import { Observable } from 'rxjs/Rx';
 export class HeroService {
   private heroesUrl = 'http://localhost:8080/customers';
   private headers = new Headers({'Content-Type': 'application/json'});
-  //private heroesUrl = 'api/heroes';
 
   constructor(private http: Http) { }
 
@@ -32,7 +31,6 @@ export class HeroService {
   }
 
   update(hero: Hero): Promise<Hero> {
-    //const url = `${this.heroesUrl}/${hero.id}`;
     const url = `${this.heroesUrl}`;
     return this.http
       .put(url, JSON.stringify(hero), {headers: this.headers})
