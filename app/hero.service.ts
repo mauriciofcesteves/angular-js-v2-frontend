@@ -4,7 +4,6 @@ import { Http, Response, Headers} from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 import { Hero }   from './hero';
-import { HEROES } from './mock-heroes';
 
 import { Observable } from 'rxjs/Rx';
 
